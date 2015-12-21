@@ -27,16 +27,16 @@ end
 class CarFactory
   def self.build(make, model)
     case make
-      when "Acura"
+      when :Acura
         Acura.new(model)
-      when "BMW"
+      when :BMW
         BMW.new(model)
     end
   end
 end
 
-usedCar1 = CarFactory.build("Acura", "NSX")
+usedCar1 = CarFactory.build(:Acura, "TLS R")
 usedCar1.details
 
-usedCar2 = CarFactory.build("BMW", "135i")
+usedCar2 = CarFactory.build(:BMW, "135i")
 usedCar2.details
