@@ -26,8 +26,12 @@ end
 
 class CarFactory
   def self.build(make, model)
-    return Acura.new(model) if make == "Acura"
-    return BMW.new(model) if make == "BMW"
+    case make
+      when "Acura"
+        Acura.new(model)
+      when "BMW"
+        BMW.new(model)
+    end
   end
 end
 
