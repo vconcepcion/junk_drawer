@@ -13,8 +13,4 @@ end
 singleton1 = Singleton.instance
 singleton2 = Singleton.instance
 
-if singleton1 == singleton2
-  puts "They are the same"
-else
-  puts "Not the same"
-end
+puts (singleton1 == singleton2) ? "They are the same" : "Not the same"
