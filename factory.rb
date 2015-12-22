@@ -26,12 +26,7 @@ end
 
 class CarFactory
   def self.build(make, model)
-    case make
-      when :Acura
-        Acura.new(model)
-      when :BMW
-        BMW.new(model)
-    end
+    Object.const_get(make).new(model)
   end
 end
 
