@@ -9,7 +9,7 @@ class Seller
   end
 
   def add_buyer buyer
-    @buyer_list << buyer
+    buyer_list << buyer
   end
 
   # overwrite the price attribute setter (acts like a trigger)
@@ -21,7 +21,7 @@ class Seller
   end
 
   def notify_buyer_list
-    @buyer_list.each do |buyer|
+    buyer_list.each do |buyer|
       buyer.update self
     end
   end
@@ -35,7 +35,7 @@ class Buyer
   end
 
   def update seller
-    puts "#{@name} has been notified of the new price: #{seller.price}"
+    puts "#{name} has been notified of the new price: #{seller.price}"
   end
 end
 
