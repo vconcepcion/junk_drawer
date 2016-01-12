@@ -6,37 +6,21 @@ class Movie
   end
 end
 
-class DirectorCredits
-  attr_accessor :target
-
+class AbstractCredits
   def self.attach_to object
     @target = object
-  end
-
-  def self.output
-    str = ""
-
-    str << @target.output
-    str << "\nDirected by: George Lucas"
-
-    str
   end
 end
 
-class StarringCredits
-  attr_accessor :target
-
-  def self.attach_to object
-    @target = object
-  end
-
+class DirectorCredits < AbstractCredits
   def self.output
-    str = ""
+    "#{@target.output}\nDirected by: George Lucas"
+  end
+end
 
-    str << @target.output
-    str << "\nStarring: Mark Hamill, Harrison Ford, Carrie Fischer"
-
-    str
+class StarringCredits < AbstractCredits
+  def self.output
+    "#{@target.output}\nStarring: Mark Hamill, Harrison Ford, Carrie Fischer"
   end
 end
 
