@@ -12,13 +12,11 @@ def build_sets length, input
 
   input.each_with_index do |numA, indexA|
     if indexA <= input.length - length
-      input.each_with_index do |_, indexB|
+      for indexB in ((indexA + 1)..input.length)
         current_set = [numA]
 
-        (indexB..(indexB + length)).each do |indexC|
-          if indexB > indexA && current_set.length < length && indexC < input.length
-            current_set << input[indexC]
-          end
+        for indexC in (indexB..(input.length - 1))
+          current_set << input[indexC] if current_set.length < length
         end
 
         all_sets << current_set if current_set.length == length
@@ -32,6 +30,6 @@ end
 input_set = [1, 2, 3, 4, 5]
 # input_set = ['Apple', 'Banana', 'Cantelope']
 
-(0..input_set.length).each do |len|
-  puts build_sets(len, input_set).inspect
+for set_length in (0..input_set.length)
+  puts build_sets(set_length, input_set).inspect
 end
