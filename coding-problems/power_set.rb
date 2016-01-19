@@ -12,7 +12,7 @@ def build_sets length, input
 
   input.each_with_index do |numA, indexA|
     if indexA <= input.length - length
-      input.each_with_index do |numB, indexB|
+      input.each_with_index do |_, indexB|
         current_set = [numA]
 
         (indexB..(indexB + length)).each do |indexC|
