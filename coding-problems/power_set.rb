@@ -10,10 +10,10 @@ def build_sets length, input
   all_sets = []
   current_set = []
 
-  input.each_with_index do |numA, index_a|
+  input.each_with_index do |num_a, index_a|
     if index_a <= input.length - length
       for index_b in ((index_a + 1)..input.length)
-        current_set = [numA]
+        current_set = [num_a]
 
         for index_c in (index_b..(input.length - 1))
           current_set << input[index_c] if current_set.length < length
